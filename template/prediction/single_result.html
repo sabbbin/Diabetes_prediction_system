@@ -1,0 +1,113 @@
+
+
+{% extends 'partials/layout.html' %}
+
+
+
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock header %}
+
+  {% block carousel %}
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+ <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <span class="subtitle-1">TEST TO PREVENT</span>
+        <h2 class="section-title-1 font-weight-bold">Diabetes Prediction</h2>
+      </div>
+    </div>
+  </div>
+  <div>
+        <div class="testimonial">
+          <h2>Name:  {{ name }}</h2>
+          <h3>Age:  {{ age }}</h3>
+          <h3>Result:  {{ result }}</h3>
+
+          <!-- <blockquote class="mb-5">
+            <p>&ldquo;In statistics, Naive Bayes classifiers are a family of simple "probabilistic classifiers" based on applying Bayes' theorem with strong independence assumptions between the features. They are among the simplest Bayesian network models.&rdquo;</p>
+          </blockquote> -->
+
+          <figure class="mb-4 d-flex align-items-center justify-content-center">
+          <h2 class="section-title-1 font-weight-bold">Remark: {{ message }}</h2>
+            
+          </figure>
+        </div>
+      </div>
+      <a id="toogle" data-toggle="collapse" href="#view_more" role="button" aria-expanded="false" aria-controls="view_more" style="float: right;">
+        View More...
+      </a>
+      <br>
+      <br>
+      <div class="collapse" id="view_more">
+        <div class="card card-body">
+          <table class="table">
+            <h2>Result</h2>
+              <thead>
+                <tr>
+                  <th>S.N.</th>
+                  <th>Algorithm</th>
+                  <th>Accuracy</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Random Forest</td>
+                  <td>{{ accuracy.0 }}</td>
+                  <td>{{ prediction.0 }}</td>
+                </tr>      
+                <tr>
+                  <td>2</td>
+                  <td>Decision Tree</td>
+                  <td>{{ accuracy.1 }}</td>
+                  <td>{{ prediction.1 }}</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Naive Bayes</td>
+                  <td>{{ accuracy.2 }}</td>
+                  <td>{{ prediction.2 }}</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>KNN</td>
+                  <td>{{ accuracy.3 }}</td>
+                  <td>{{ prediction.3 }}</td>
+                </tr>
+                
+                <tr>
+                  <td>5</td>
+                  <td>Logistic Regression</td>
+                  <td>{{ accuracy.4 }}</td>
+                  <td>{{ prediction.4 }}</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>SVM</td>
+                  <td>{{ accuracy.5 }}</td>
+                  <td>{{ prediction.5 }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      
+ </div>
+
+
+  {% endblock carousel %}
+
+
+
+ 
+  {% block script %}
+  {% include "partials/script.html" %}
+
+  {% endblock script %} 

@@ -1,0 +1,29 @@
+{% extends 'partials/layout.html' %}
+{% load crispy_forms_tags %}
+
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock header %}
+
+  {% block carousel %}
+  <br>
+  <br>
+  <br>
+  <div class="container btn-primary" style="width=40px">
+   <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="col-12">
+                            <button type="submit" class="btn submit-btn">SignUp</button>
+                        </div>
+                    </form>
+  {% endblock carousel %}
+  </div>
+
+
+
+ 
+  {% block script %}
+  {% include "partials/script.html" %}
+  {% endblock script %}
+  

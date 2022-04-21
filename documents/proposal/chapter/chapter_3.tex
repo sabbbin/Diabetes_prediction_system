@@ -1,0 +1,89 @@
+      \chapter{Requirement Analysis}
+        \section{SOFTWARE REQUIREMENT}
+Our sentiment analysis system requires Python, PHP, MySQL, TensorFlow, Flask,
+Django, JavaScript, Keras which are described below;
+            \subsection{Python}
+Python is a high-level interpreted programming language for general-purpose
+programming created by Guido van Rossum which as released in 1991. Python has
+design philosophy that emphasizes code readability, notably using significant white
+spaces. It provides constructs that enable clear programming in small and large scales.
+The programming language features dynamic type system and automatic memory
+management with support to multiple programming paradigms including Object
+Oriented Imperative, Functional and Procedural. The programming language has large
+comprehensive standard library.
+            \subsection{PHP}
+Hypertext Preprocessor (or simply PHP) is a server-side scripting language designed
+for web development but also used as a general-purpose programming language. The
+language is used for creating sentiment labeling system as shown in Appendix of this
+report. Annotator clicks the “positive” or “negative” label which is then saved in JSON
+format read by data preprocessing system.
+            \subsection{MySQL}
+MySQL is an open-source relational database management system (RDBMS). Its name
+is a combination of "My", the name of co-founder Michael Widenius's daughter, and
+"SQL", the abbreviation for Structured Query Language. In our project, we use this
+database to feed into PHP system for data labeling. The database is created from
+scraping Nepali Sentiment text in python.
+            \subsection{Keras}
+Keras is an open source neural network library written in Python which is capable of
+running on top of TensorFlow, Microsoft Cognitive Toolkit, or Theano. Actual model
+preparation of different models is done using Keras machine learning framework. We
+5use Keras functional API to generate models as well as train the model on different
+annotated data.
+            \subsection{Flask}
+Flask is a micro web framework written in Python. It is classified as a micro-
+framework because it does not require particular tools or libraries. We use flask to
+create sentiment inference engine that will be created by training the sentiment
+classification model.
+            \subsection{JavaScript}
+JavaScript often abbreviated as JS, is a high-level, interpreted programming language.
+It is a language which is also characterized as dynamic, weakly typed, prototype-based
+and multi-paradigm. We use JS to both accompany in sentiment labeling system as well
+as sentiment inference system which is shown in appendix part of this report.
+        \section{FUNCTIONAL REQUIREMENT}
+            \subsection{Dataset Labeler}
+Dataset labeler is the labelling system that is used to annotate the texts as “positive”, or
+“negative”.
+            \subsection{Nepali News Web Scrapper}
+It is the tool that extracts various Nepali text from twitter as well as various Nepali news
+portals to fed into Dataset Labeler as well as vector creation process.
+            \subsection{Inference System}
+It is the system formed after training the model using the dataset labeled from dataset
+labeler and run the prediction model in it.
+        \section{NON-FUNCTIONAL REQUIREMENT}
+These requirements are not needed by the system but are essential for the better
+performance of sentiment engine. The points below focus on the non-functional
+requirement of the system.
+            \subsection{Reliability}
+The system is reliable. Sentiment prediction matches 80% of the time.
+            \subsection{Maintainability}
+A maintainable system is created and Sentiment Analyzer Engine is able to train on
+new input data and is scalable to millions of data points.
+            \subsection{Performance}
+The forward pass from the neural network is a fast process. For the engine, fast matrix
+computation occurs.
+            \subsection{Portability}
+Sentiment Analyzer engine is portable and it is easy to integrate into any web
+application or mobile application imaginable by the use of the REST API’s made.
+        \section{FEASIBILITY STUDY}
+The following points describes the feasibility of the project.
+            \subsection{Economic Feasibility}
+The total expenditure of the project is just computational power. The dataset and
+computational power required for the project are easily available. Dataset is found from
+the local news site and computational power using our own laptop along-side Google
+Collaboratory cloud computing service so, the project is economically feasible.
+            \subsection{Technical Feasibility}
+The project is trained with lots of labeled sentiment news data and twitter tweets.
+Preparing the data has its complexity like scraping from news websites and manually
+labeling the dataset for sentiment classification. Creating the project will be challenging
+but is feasible. In terms of availability, the dataset is easily web-scrapped from popular
+news portals, social networking sites like; twitter and labeled creating a PHP web
+application.
+Training huge news dataset takes a lot of computation power. Which is trained in
+INTEL i5 processor for some hours for about 10K data points. Training the project is
+also feasible and is better with huge data points and large processing power.
+            \subsection{Operational Feasibility}
+The project can be operational just after training from labeled data using neural network
+models. After the engine for sentiment analysis for Nepali text is created, the engine
+can be operated to implement in different recommender systems and text analyzers.
+Thus, the project is operationally feasible.
+    

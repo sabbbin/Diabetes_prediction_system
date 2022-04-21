@@ -1,0 +1,31 @@
+{% extends 'partials/layout.html' %}
+{% load crispy_forms_tags %}
+
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock header %}
+
+  {% block carousel %}
+  <br>
+  <br>
+  <br>
+  <div class="container btn-primary" style="width=40px">
+  <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <a style="color: blue" href="{% url 'password_reset' %}">Forgot Password?</a>
+                        <p></p>
+                        <div class="col-12">
+                            <button type="submit" class="btn submit-btn">Login</button>
+                        </div>
+                    </form>
+  {% endblock carousel %}
+  </div>
+
+
+
+ 
+  {% block script %}
+  {% include "partials/script.html" %}
+  {% endblock script %}
+  

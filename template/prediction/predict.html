@@ -1,0 +1,251 @@
+{% extends 'partials/layout.html' %}
+
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock header %}
+
+  {% block carousel %}
+  <div class="hero">
+    <form class="container border w-75" method="POST" action="{% url 'process' %}">
+    {% csrf_token %}
+      <div class="form-control text-center text-primary bg-dark">
+        <label>Predict Your Diabetes</label>
+      </div>
+      <!-- Material input -->
+      <div class="d-flex justify-content-center align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Enter your name</label>
+              </div>
+            
+                <input type="text" name="name" id="name">
+            
+      </div>
+      <div class="row p-3">
+        <div class="col-sm-6">
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>What is your age?</label>
+              </div>
+            
+                <input type="number" name="age" id="age" required min="10" max="99">
+            
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Your Gender?</label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="gender1" value="Male">
+                <label class="form-check-label" for="gender1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="gender2" value="Female">
+                <label class="form-check-label" for="gender2">Female</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have <span class="meaning"><b>Polyuria</b></span>?<span class="hide">Frequent passage of large volumes of urine</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polyuria" id="polyuria1" value="Yes">
+                <label class="form-check-label" for="polyuria1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polyuria" id="polyuria2" value="No">
+                <label class="form-check-label" for="polyuria2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have <span class="meaning"><b>Polydipsia</b></span>? <span class="hide">Abnormally great thirst</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polydipsia" id="polydipsia1" value="Yes">
+                <label class="form-check-label" for="polydipsia1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polydipsia" id="polydipsia2" value="No">
+                <label class="form-check-label" for="polydipsia2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Weight loss?</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="weight_loss" id="weight_loss1" value="Yes">
+                <label class="form-check-label" for="weight_loss1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="weight_loss" id="weight_loss2" value="No">
+                <label class="form-check-label" for="weight_loss2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have weakness?</label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="weakness" id="weakness1" value="Yes">
+                <label class="form-check-label" for="weakness1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="weakness" id="weakness2" value="No">
+                <label class="form-check-label" for="weakness2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have <span class="meaning"><b>Polyphagia</b></span> ?<span class="hide">Excessive eating or appetite</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polyphagia" id="polyphagia1" value="Yes">
+                <label class="form-check-label" for="polyphagia1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="polyphagia" id="polyphagia2" value="No">
+                <label class="form-check-label" for="polyphagia2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have <span class="meaning"><b>Genital Thrush</b></span>? <span class="hide">Infection of the genitals with the candida fungus, causing a whitish discharge.</span> </label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genaital_thrush" id="genaital_thrush1" value="Yes">
+                <label class="form-check-label" for="genaital_thrush1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genaital_thrush" id="genaital_thrush2" value="No">
+                <label class="form-check-label" for="genaital_thrush2">No</label>
+              </div>
+          </div>
+        </div>
+        <div style="border-left: 3px solid grey; height: 280px; position: absolute;left: 50%;">
+
+        </div>
+        <div class="col-sm-6">
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have visual blurring?</label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="visual_blurring" id="visual_blurring1" value="Yes">
+                <label class="form-check-label" for="visual_blurring1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="visual_blurring" id="visual_blurring2" value="No">
+                <label class="form-check-label" for="visual_blurring2">No</label>
+              </div>
+          </div>
+          {% comment %} <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have itching?</label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="itching" id="itching1" value="Yes">
+                <label class="form-check-label" for="itching1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="itching" id="itching2" value="No">
+                <label class="form-check-label" for="itching2">No</label>
+              </div>
+          </div> {% endcomment %}
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have <span class="meaning"><b>Irritability</b></span>?<span class="hide">The quality or state of being irritable</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="irritability" id="irritability1" value="Yes">
+                <label class="form-check-label" for="irritability1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="irritability" id="irritability2" value="No">
+                <label class="form-check-label" for="irritability2">No</label>
+              </div>
+          </div>
+          {% comment %} <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label>Do you have Delay Healing?</label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="delay_healing" id="delay_healing1" value="Yes">
+                <label class="form-check-label" for="delay_healing1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="delay_healing" id="delay_healing2" value="No">
+                <label class="form-check-label" for="delay_healing2">No</label>
+              </div>
+          </div> {% endcomment %}
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label><span class="meaning"><b>Partial Paresis</b></span>?<span class="hide">Weakening of a muscle or group of muscles</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="partial_paresis" id="partial_paresis1" value="Yes">
+                <label class="form-check-label" for="partial_paresis1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="partial_paresis" id="partial_paresis2" value="No">
+                <label class="form-check-label" for="partial_paresis2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label><span class="meaning"><b>Muscle Stiffness</b></span>?<span class="hide">Muscle stiffness is when your muscles feel tight and you find it more difficult to move than you usually do, especially after rest. </span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="muscle_stiffness" id="muscle_stiffness1" value="Yes">
+                <label class="form-check-label" for="muscle_stiffness1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="muscle_stiffness" id="muscle_stiffness2" value="No">
+                <label class="form-check-label" for="muscle_stiffness2">No</label>
+              </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center">
+            <div class="form-check form-check-inline">
+                <label><span class="meaning"><b>Alopecia</b></span>?<span class="hide">Condition that causes hair to fall out in small patches, which can be unnoticeable.</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="alopecia" id="alopecia1" value="Yes">
+                <label class="form-check-label" for="alopecia1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="alopecia" id="alopecia2" value="No">
+                <label class="form-check-label" for="alopecia2">No</label>
+              </div>
+          </div>
+          {% comment %} <div class="d-flex justify-content-start align-items-center">
+            
+            <div class="form-check form-check-inline">
+                <label><span class="meaning"><b>Obesity</b></span>?<span class="hide">Excessive amount of body fat</span></label>
+              </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="obesity" id="obesity1" value="Yes">
+                <label class="form-check-label" for="obesity1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="obesity" id="obesity2" value="No">
+                <label class="form-check-label" for="obesity2">No</label>
+              </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+      
+      <div class="form-control text-center text-primary bg-dark py-1">
+        <button class="btn btn-primary btn-sm" type="submit">Calculate</button>
+      </div>
+    </form>
+  </div>
+  
+  {% endblock carousel %}
+
+  {% block footer %}
+  {% include "partials/footer.html" %}
+  {% endblock footer %}
+  {% block script %}
+  {% include "partials/script.html" %}
+  {% endblock script %}
+  

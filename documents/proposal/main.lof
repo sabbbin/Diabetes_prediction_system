@@ -1,0 +1,40 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces System Use Case Diagram\relax }}{7}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces System Block Diagram\relax }}{8}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sequence Diagram\relax }}{9}{figure.caption.14}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Prototype Model for Software Development\relax }}{10}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tweet in JSON Format\relax }}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tweet tokenization and storing flow chart\relax }}{12}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Data Preparation Block Diagram\relax }}{13}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tokenization \relax }}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Stop Words Removal Process\relax }}{14}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Stemming Process\relax }}{14}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces POS Tagging System example taken from ANN Based POS Tagging for Nepali Text\relax }}{15}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Basic Machine Learning Training Process\relax }}{16}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Word2Vec Continuous Bag of Words Model\relax }}{19}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Distribution of Number of Words OOV per sentence\relax }}{19}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Single Perceptron in a Neural \relax }}{20}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Standard RNN Network\relax }}{21}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces RNN-LSTM Network Architecture\relax }}{21}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces LSTM RNN Model\relax }}{22}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Attention Model Visualization\relax }}{23}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Attention Based LSTM RNN model\relax }}{24}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces POS tagger LSTM RNN model\relax }}{25}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Accuracy vs Epoch of POS tagger\relax }}{25}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Model for Sentiment with POS\relax }}{26}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Model for Sentiment with POS and Attention\relax }}{27}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Accuracy vs Epoch for Sentiment with POS and Attention\relax }}{28}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Block Diagram of Data Labeling System\relax }}{28}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Positive and Negative Labels\relax }}{29}{figure.caption.43}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Confusion matrix for LSTM RNN Model\relax }}{31}{figure.caption.44}%
+\contentsline {figure}{\numberline {A-1}{\ignorespaces Inference Engine Screenshot 1\relax }}{32}{figure.caption.46}%
+\contentsline {figure}{\numberline {A-2}{\ignorespaces Inference Engine Screenshot 2\relax }}{33}{figure.caption.47}%
+\contentsline {figure}{\numberline {A-3}{\ignorespaces Inference Engine Screenshot 3\relax }}{34}{figure.caption.48}%
+\contentsline {figure}{\numberline {A-4}{\ignorespaces Inference Engine Screenshot 4\relax }}{35}{figure.caption.49}%
+\contentsline {figure}{\numberline {A-5}{\ignorespaces Sentiment Labeling System (Random) Screenshot – 1\relax }}{36}{figure.caption.50}%
+\contentsline {figure}{\numberline {A-6}{\ignorespaces Sentiment Labeling System (Manual) Screenshot – 1\relax }}{37}{figure.caption.51}%

@@ -1,0 +1,97 @@
+{% load static %}
+
+
+<header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="container">
+      
+      <div class="row align-items-center">
+
+        <div class="col-6 col-xl-2">
+          <div class="mb-0 site-logo"><a href="{% url 'home' %}" class="mb-0">DiabetesPrediction<span class="text-primary">.</span> </a></div>
+        </div>
+
+       <div class="col-12 col-md-10 d-none d-xl-block">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+              <li>
+                <a href="https://www.who.int/health-topics/diabetes#tab=tab_1" class="nav-link">About Diabetes</a>
+              </li>
+              <li><div class="dropdown">
+                  <button class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    About Project
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{% url 'dataset' %}">Dataset</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#downloadModal" href="#">Results</a>
+                    
+                  </div> 
+                </div></li>
+                
+
+              <li><a href="{% url 'compare' %}" class="nav-link">Comparison</a></li>
+
+            <!-- <li>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:24px"><i class="fa fa-sign-in"></i>
+                
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Login</a>
+                  <a class="dropdown-item" href="#">Signup</a>
+                  <a class="dropdown-item" href="#">Logout</a>
+                  
+                </div> 
+              </div>
+            </li> -->
+             
+            </ul>
+          </nav>
+          
+        </div>
+        
+
+        <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3 text-black"></span></a></div>
+
+      </div>
+      
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><b>Results</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            This is solely for research purpose. Hope you wont misuse the data.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"><a href="{% url 'download' %}">Download</a></button>
+          </div>
+        </div>
+      </div>
+    
+    
+
+  </header>
+
+
+
+

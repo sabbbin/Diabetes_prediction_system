@@ -1,0 +1,25 @@
+{% extends 'partials/layout.html' %}
+{% load crispy_forms_tags %}
+
+
+  {% block algorithms %}
+  <div>
+        <div class="testimonial">
+
+          <blockquote class="mb-5">
+            <p>&ldquo;{{ activation_message }}&rdquo;</p>
+          </blockquote>
+
+          <figure class="mb-4 d-flex align-items-center justify-content-center">
+          <h2 class="section-title-1 font-weight-bold">Activation Message</h2>
+            
+          </figure>
+        </div>
+      </div>
+  {% endblock algorithms %}
+
+ 
+  {% block script %}
+  {% include "partials/script.html" %}
+  {% endblock script %}
+  

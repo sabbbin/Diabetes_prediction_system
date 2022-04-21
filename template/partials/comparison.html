@@ -1,0 +1,219 @@
+{% extends 'partials/layout.html' %}
+
+
+
+  {% block header %}
+  {% include "partials/header.html" %}
+  {% endblock header %}
+
+  {% block carousel %}
+
+  <br>
+  <br>
+  <br>
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+
+ <div id="chartContainer" style="height: 450px; width: 80%; margin-left: auto; margin-right: auto;"></div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div id="chartContainer1" style="height: 450px; width: 80%; margin-left: auto; margin-right: auto;"></div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div id="chartContainer2" style="height: 450px; width: 80%; margin-left: auto; margin-right: auto;"></div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div id="chartContainer3" style="height: 450px; width: 80%; margin-left: auto; margin-right: auto;"></div>
+
+<script>  
+
+// bargraph  of accuracy
+        var data = JSON.parse("{{data|escapejs}}"); 
+        console.log(data);
+      var dataArray= data['accuracy'];
+        // var dataArray=[1,2,3,4,5];
+        console.log(dataArray);
+        var dps = [];   //dataPoints. 
+   
+	 var chart = new CanvasJS.Chart("chartContainer",{
+      	title :{
+      		text: "accuracy of machine learning"
+      	},
+      	axisX: {						
+      		title: "machine learining"
+      	},
+      	axisY: {						
+      		title: "accuracy"
+      	},
+      	data: [{
+        type: "column",
+       
+      		// indexlabel:['one','tow','three','four','fiveygug'],
+      		dataPoints : dps,
+           
+      	}]
+      });
+
+      var label=['random_forest','decision-tree','navie-bayes','knn-algorithm','logistic-regression','Support_vector_machine']
+     function parseDataPoints () {
+        for (var i = 0; i <= dataArray.length; i++)
+          dps.push({label:label[i],y: dataArray[i]});     
+     };
+   		
+   	 parseDataPoints();
+
+     chart.options.data[0].dataPoints = dps;
+
+     chart.render();
+
+
+  
+// piechart of f1score
+var dataArray1= data['f1score'];
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "f1score of algorithm"
+	},
+	data: [{        
+		type: "line",
+      	indexLabelFontSize: 16,
+		dataPoints: [
+			{ y: dataArray1[0],indexLabel: "\ random_forest",markerColor: "red", markerType: "triangle" },
+      { y: dataArray1[1],indexLabel: "\ Decision_tree",markerColor: "green", markerType: "triangle" },
+      { y: dataArray1[2],indexLabel: "\ Navies_bayes",markerColor: "yello", markerType: "triangle" },
+      { y: dataArray1[3],indexLabel: "\ Knn_algorithm",markerColor: "blue", markerType: "triangle" },
+      { y: dataArray1[4],indexLabel: "\ Logistic_regression",markerColor: "orange", markerType: "triangle" },
+      { y: dataArray1[5],indexLabel: "\ sample_vector_machine",markerColor: "black", markerType: "triangle" }
+		
+			
+		]
+	}]
+});
+chart1.render();    
+
+//bardiagram of precision
+var dps2 = [];   //dataPoints. 
+var dataArray2= data['precision'];
+	 var chart2 = new CanvasJS.Chart("chartContainer2",{
+      	title :{
+      		text: "precision of machine learning"
+      	},
+      	axisX: {						
+      		title: "Algorithm"
+      	},
+      	axisY: {						
+      		title: "precision"
+      	},
+      	data: [{
+        type: "column",
+       
+      		// indexlabel:['one','tow','three','four','fiveygug'],
+      		dataPoints : dps2,
+           
+      	}]
+      });
+
+      
+     function parseDataPoints2() {
+        for (var i = 0; i <= dataArray2.length; i++)
+          dps2.push({label:label[i],y: dataArray2[i]});     
+     };
+   		
+   	 parseDataPoints2();
+
+     chart2.options.data[0].dataPoints = dps2;
+
+     chart2.render();
+       
+
+  
+// piechart of recall
+var dataArray3= data['recall'];
+var chart3 = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Recall of algorithm"
+	},
+	data: [{        
+		type: "line",
+      	indexLabelFontSize: 16,
+		dataPoints: [
+			{ y: dataArray3[0],indexLabel: "\ random_forest",markerColor: "red", markerType: "triangle" },
+      { y: dataArray3[1],indexLabel: "\ Decision_tree",markerColor: "green", markerType: "triangle" },
+      { y: dataArray3[2],indexLabel: "\ Navies_bayes",markerColor: "yello", markerType: "triangle" },
+      { y: dataArray3[3],indexLabel: "\ Knn_algorithm",markerColor: "blue", markerType: "triangle" },
+      { y: dataArray3[4],indexLabel: "\ Logistic_regression",markerColor: "orange", markerType: "triangle" },
+      { y: dataArray3[5],indexLabel: "\ sample_vector_machine",markerColor: "black", markerType: "triangle" }
+		
+			
+		]
+	}]
+});
+chart3.render();    
+
+
+
+    </script>
+    <!-- <br>
+    <br>
+    <br>
+    <br>
+    <table border=" 5px solid black;" style="font-size:20px; width: 80%;margin-left:auto;margin-right:auto; background-color: #f1f1c1;">
+      
+      <thead><tr>
+          <script>
+          //for(var j=0; j<2; j++)
+         // {
+          document.write("<th><label style='color:red;'>"+'S.N'+"</label></th>");
+            document.write("<th><label style='color:red;'>"+'Algorithm'+"</label></th>");
+            document.write("<th><label style='color:red;'>"+'Result'+"</label></th>");
+          //}
+          </script>
+          </tr>
+      </thead>
+      <tbody>
+        <script type="text/javascript">	
+          var data = JSON.parse("{{data|escapejs}}"); 
+          var dataArray2=data['result'];
+          var dict={
+            1:"Positive",
+            0:"Negative"
+          }
+    for(var i =0; i<dataArray2.length; i++)
+    {
+      document.write("<tr>");
+      //for(var k=1; k<=10; k++)
+       // {
+        document.write("<td>"+(i+1)+"</td>");
+          document.write("<td>"+label[i]+"</td>");
+          document.write("<td>"+dict[dataArray2[i]]+"</td>");	
+       // }
+      document.write("</tr>"); 
+    }	
+    </script>
+      </tbody>
+    </table> -->
+
+  {% endblock carousel %}
+                    <!-- <div id="chartContainer" style="height: 360px; width: 100%;">
+                        
+                    </div> -->
+
+
+
+
+ 
+  {% block script %}
+  {% include "partials/script.html" %}
+
+  {% endblock script %} 
+

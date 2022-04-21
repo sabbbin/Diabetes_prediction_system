@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+  <title>Diabetes Prediction</title>
+  <style>
+    .hide{
+      display: none;
+    }
+    .meaning:hover + .hide {
+      display: block;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <!--NavBar-->
+
+
+  {% block header %}
+  {% endblock header %}
+
+
+
+  <!--End NabBar-->
+  <!--carousel starts-->
+  {% block carousel %}
+  {% endblock carousel %}
+  <!--carousel ends-->
+
+<!--description starts-->
+  {% block features %}
+  {% endblock features %}
+<!--description ends-->
+
+ 
+  <!--some-->
+  {% block blog %}
+  {% endblock blog %}
+  <!--end some-->
+
+  <!--algorithms start-->
+  {% block algorithms %}
+  {% endblock algorithms %}
+  <!--algorithms ends-->
+  
+  <!--Footer Starts-->
+  {% block footer %}
+  {% endblock footer %}
+  <!--Footer Ends-->
+  <!--Script Starts-->
+  {% block script %}
+  {% endblock script %}
+  <!--Script Ends-->
+</body>
+</html>
